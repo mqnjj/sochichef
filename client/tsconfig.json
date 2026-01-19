@@ -1,25 +1,32 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
+    // Окружение
+    "target": "ES2020",
+    "lib": [
+      "DOM",
+      "DOM.iterable",
+      "ES2022"
+    ],
+    "jsx": "preserve",
+    // Модули
     "module": "esnext",
     "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "incremental": true,
+    // Генерация файлов
+    "noEmit": true,
+    "tsBuildInfoFile": "./.next/cache/.tsbuildinfo",
+    // Next.js plugins
     "plugins": [
       {
         "name": "next"
       }
     ],
+    // Структура проекта
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -30,5 +37,8 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
 }
