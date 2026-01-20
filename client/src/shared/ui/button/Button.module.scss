@@ -1,0 +1,40 @@
+.button {
+  background-color: var(--color-blue);
+  padding-inline: var(--button-padding-x);
+  font-size: var(--font-size-18);
+  border-radius: var(--border-radius-8);
+
+  &__link {
+    @include flex(inline-flex, center, center);
+    @include reset-link;
+    padding-block: rem(24);
+    column-gap: rem(10);
+    color: var(--color-light);
+
+    @include mobile {
+      padding-block: rem(20);
+    }
+
+    &-icon {
+      @include square(#{rem(24)});
+    }
+
+    &-description {
+      font-weight: 600;
+
+      @include mobile {
+        font-size: var(--font-size-16);
+      }
+    }
+  }
+
+  &__callback {
+    color: var(--color-light);
+    padding-block: rem(16);
+    font-weight: 600;
+    border: none;
+    @include mobile {
+      font-size: var(--font-size-16);
+    }
+  }
+}

@@ -1,0 +1,97 @@
+#burger-toggle {
+  display: none;
+}
+
+.burger {
+  &__button {
+    @include flex(flex, space-between, center);
+    flex-direction: column;
+    height: rem(25);
+    width: rem(30);
+    cursor: pointer;
+
+    &-toggle {
+      display: none;
+    }
+
+    &-line {
+      &--top,
+      &--middle,
+      &--bottom {
+        width: 100%;
+        height: rem(3);
+        background-color: var(--color-light);
+        border-radius: var(--border-radius-8);
+        transition:
+          transform var(--transition-duration) ease,
+          opacity var(--transition-duration) ease;
+        transform-origin: center;
+        z-index: 100;
+      }
+    }
+
+    &-toggle:checked ~ & {
+      .burger__button-line--top {
+        transform: translateY(#{rem(11)}) rotate(-45deg);
+      }
+      .burger__button-line--middle {
+        opacity: 0;
+      }
+      .burger__button-line--bottom {
+        transform: translateY(#{rem(-11)}) rotate(45deg);
+      }
+    }
+  }
+
+  &__menu {
+    @include flex(flex, space-between, start);
+    flex-direction: column;
+    padding-inline: var(--container-padding-x);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100svh;
+    background-color: var(--color-dark);
+    z-index: 50;
+    transform: translateY(-100%);
+    transition: transform var(--transition-duration);
+    font-size: clamp(1.125rem, 2.868vw, 1.375rem);
+
+    &-navigation {
+      margin-top: rem(120);
+      &__list {
+        @include flex(flex, start, start);
+        flex-direction: column;
+        row-gap: 1.81em;
+      }
+
+      &__link {
+        @include reset-link;
+      }
+    }
+
+    &-access {
+      @include flex(flex, start, start);
+      flex-direction: column;
+      row-gap: 1.41em;
+      margin-bottom: rem(20);
+
+      &__number,
+      &__address {
+        @include flex;
+        @include reset-link;
+
+        column-gap: rem(10);
+
+        &-icon {
+          @include square(1.81em);
+        }
+      }
+    }
+  }
+
+  &__button-toggle:checked ~ &__menu {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,59 @@
+.banner {
+  @include flex(flex, space-between, center);
+
+  position: relative;
+  flex-direction: column;
+  margin-bottom: var(--section-padding-y);
+  width: 100%;
+  height: 100svh;
+  color: var(--color-light);
+
+  & > img {
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  @include mobile {
+    @include flex(flex, end, center);
+    & > img {
+      object-position: 30% center;
+    }
+  }
+
+  &__title {
+    font-size: clamp(#{rem(30)}, 7.746vw, #{rem(110)});
+    margin-top: rem(150);
+
+    @include mobile {
+      font-weight: 400;
+    }
+  }
+
+  &__main {
+    @include flex();
+    flex-direction: column;
+    row-gap: rem(24);
+    margin-bottom: rem(40);
+
+    &-description {
+      font-size: clamp(#{rem(24)}, 3.24vw, #{rem(46)});
+      text-align: center;
+      font-weight: 300;
+      max-width: rem(850);
+      margin-top: rem(8);
+
+      @include tablet {
+        max-width: rem(610);
+      }
+
+      @include mobile {
+        max-width: rem(450);
+      }
+
+      @include mobile-s {
+        max-width: rem(330);
+      }
+    }
+  }
+}

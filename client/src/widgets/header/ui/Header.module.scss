@@ -1,0 +1,97 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: rem(10);
+  color: var(--color-light);
+  background-color: transparent;
+  z-index: 1;
+
+  &__information {
+    @include flex(flex, space-between, center);
+
+    &-logo {
+      @include flex();
+      @include reset-link;
+
+      column-gap: rem(16);
+
+      &__image {
+        @include square(#{rem(50)});
+        z-index: 100;
+      }
+
+      &__description {
+        font-size: var(--font-size-14);
+        z-index: 100;
+      }
+    }
+
+    &-access {
+      @include flex();
+
+      column-gap: rem(56);
+      font-size: rem(16);
+
+      @include tablet {
+        column-gap: rem(20);
+      }
+
+      &__address {
+        @include reset-link;
+      }
+
+      &__contacts {
+        &-link {
+          @include reset-link;
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    &-menu {
+      &__list {
+        @include flex(flex, space-between, center);
+
+        column-gap: rem(30);
+      }
+
+      &__item {
+        @include flex();
+      }
+
+      &__link {
+        @include reset-link;
+        @include flex(inline-flex);
+
+        position: relative;
+        height: rem(30);
+
+        @include tablet {
+          height: auto;
+        }
+
+        &:after {
+          position: absolute;
+          content: '';
+          top: 100%;
+          left: 50%;
+          translate: -50% -50%;
+          width: 0;
+          height: rem(1);
+          background-color: var(--color-light);
+          transition: var(--transition-duration);
+        }
+
+        @include hover {
+          &:after {
+            width: 100%;
+            transition: var(--transition-duration);
+          }
+        }
+      }
+    }
+  }
+}
