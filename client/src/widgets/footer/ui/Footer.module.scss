@@ -1,0 +1,92 @@
+.sb {
+  @include square(#{rem(40)});
+}
+
+.footer {
+  margin-top: var(--section-padding-y);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+
+  &__main {
+    @include flex(flex, space-between, center);
+    column-gap: rem(32);
+    padding-block: rem(80) rem(64);
+
+    @include tablet {
+      padding-block: rem(60) rem(48);
+      flex-direction: column;
+      align-items: start;
+      row-gap: rem(40);
+
+      @include mobile {
+        row-gap: rem(20);
+      }
+    }
+
+    @include mobile {
+      padding-block: rem(40) rem(20);
+    }
+
+    &__description {
+      @include flex(flex, start, start);
+      flex-direction: column;
+      row-gap: rem(14);
+
+      &-title {
+        font-size: var(--font-size-56);
+        font-weight: 300;
+        max-width: rem(560);
+
+        @include tablet {
+          max-width: none;
+        }
+
+        @include mobile-s {
+          font-size: clamp(#{rem(34)}, 9.5vw, #{rem(46)});
+        }
+      }
+
+      &-subtitle {
+        @include mobile-s {
+          font-size: clamp(#{rem(14)}, 3.33vw, #{rem(16)});
+        }
+      }
+    }
+  }
+
+  &__info {
+    padding-block: rem(40);
+
+    @include tablet {
+      padding-block: rem(20);
+    }
+
+    @include mobile {
+      padding-block: rem(10);
+    }
+
+    &-list {
+      @include flex(flex, space-between, center);
+      column-gap: rem(32);
+      flex-wrap: wrap;
+      row-gap: rem(20);
+    }
+
+    &-item {
+      &__contacts {
+        font-size: rem(22);
+        font-weight: 500;
+
+        @include mobile {
+          font-size: var(--font-size-18);
+        }
+      }
+
+      &__link {
+        @include flex();
+        @include reset-link;
+        column-gap: rem(10);
+      }
+    }
+  }
+}

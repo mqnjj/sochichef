@@ -1,0 +1,43 @@
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.form {
+  @include flex(flex, start, start);
+  flex-direction: column;
+  row-gap: rem(8);
+
+  &-body {
+    @include flex(flex, start, start);
+    flex-direction: column;
+    row-gap: rem(8);
+    width: 100%;
+  }
+
+  &-description {
+    @include flex;
+    column-gap: rem(6);
+    font-size: rem(15);
+    color: var(--color-grey);
+
+    @include mobile {
+      font-size: var(--font-size-14);
+    }
+
+    &-text--link {
+      color: var(--color-blue-alternate);
+      text-decoration: underline;
+      cursor: pointer;
+      transition-property: color;
+      transition-duration: var(--transition-duration);
+
+      @include hover {
+        color: var(--color-blue);
+      }
+    }
+  }
+}

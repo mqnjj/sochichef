@@ -1,0 +1,26 @@
+.input {
+  width: 100%;
+  &__main {
+    width: 100%;
+    padding: rem(12) rem(16);
+    background-color: transparent;
+    border: var(--border-input);
+    border-radius: var(--border-radius-8);
+    caret-color: var(--color-light);
+    color: var(--color-light);
+    outline: none;
+
+    &::placeholder {
+      color: var(--color-grey-alternate);
+    }
+
+    &:focus {
+      outline: rem(1) solid var(--color-light);
+    }
+
+    @include mobile-s {
+      font-size: var(--font-size-16);
+      padding: rem(10) rem(14);
+    }
+  }
+}

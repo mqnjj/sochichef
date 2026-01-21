@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import './main.scss';
-import { Header } from '@/widgets';
+import { Footer, Header } from '@/widgets';
 
 const montserrat = Montserrat({
   variable: '--font-montserrat',
@@ -12,8 +12,11 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: '',
+  title: 'УЭТК - Мастерство вкуса',
   description: '',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -26,6 +29,7 @@ export default function RootLayout({
       <body className={`${montserrat.variable}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import style from './Header.module.scss';
 import clsx from 'clsx';
 import LogoImage from '../assets/Logo.webp';
-import { Burger } from './burger/Burger';
+import Burger from './burger/Burger';
 
 export const Header = () => {
   return (

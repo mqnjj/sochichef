@@ -2,12 +2,11 @@
 
 import Image from 'next/image';
 import style from './Burger.module.scss';
-import LocateIcon from '../../assets/locate.svg';
-import PhoneIcon from '../../assets/phone.svg';
+import { Icons } from '@/shared/assets';
 import { useState } from 'react';
 import clsx from 'clsx';
 
-export const Burger = () => {
+const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuLinkClick = () => {
@@ -97,7 +96,7 @@ export const Burger = () => {
           <a href='tel:+78622544743' className={style['burger__menu-access__number']}>
             <Image
               className={style['burger__menu-access__number-icon']}
-              src={PhoneIcon}
+              src={Icons.Phone}
               alt=''
               width='40'
               height='40'
@@ -112,7 +111,7 @@ export const Burger = () => {
           >
             <Image
               className={style['burger__menu-access__address-icon']}
-              src={LocateIcon}
+              src={Icons.Locate}
               alt=''
               width='40'
               height='40'
@@ -125,3 +124,5 @@ export const Burger = () => {
     </div>
   );
 };
+
+export default Burger;
