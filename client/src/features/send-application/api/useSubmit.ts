@@ -35,7 +35,7 @@ const useSubmit = () => {
 
     try {
       const url: string = process.env.NEXT_PUBLIC_API_URL!;
-      const response = await fetch(`${url}/api/form`, {
+      const response = await fetch(`${url}/api/mail`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
