@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useState } from 'react';
 import type Types from '../model';
 import Validation from '../lib';
@@ -34,11 +34,15 @@ const useSubmit = () => {
     }
 
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}`, {
+      const url: string = process.env.NEXT_PUBLIC_API_URL!;
+      const response = await fetch(`${url}/api/form`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+
+      console.log(url);
+      console.log('Response:', response);
 
       if (!response.ok) {
         setStatus('error');
