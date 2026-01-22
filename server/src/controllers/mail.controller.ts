@@ -14,7 +14,10 @@ class mailController {
       return res.status(201).json({
         title: 'Created',
         message: 'Письмо отправлено',
-        info: info,
+        info: {
+          messageId: info.messageId,
+          data,
+        },
       });
     } catch (err) {
       return next(err);
