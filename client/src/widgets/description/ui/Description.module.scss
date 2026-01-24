@@ -1,0 +1,41 @@
+.description {
+  @include flex(flex, space-between, center);
+  column-gap: rem(24);
+  padding-block: var(--section-padding-y);
+
+  @include tablet {
+    flex-direction: column;
+    row-gap: rem(24);
+  }
+
+  &__main {
+    @include flex(flex, center, center);
+    flex-direction: column;
+    row-gap: rem(24);
+
+    &-title {
+      font-size: clamp(1.375rem, 2.929vw, 1.875rem);
+
+      @include tablet {
+        text-align: center;
+        font-weight: 500;
+      }
+    }
+
+    &-description {
+      @include flex;
+      flex-direction: column;
+      row-gap: rem(12);
+    }
+  }
+
+  &__image {
+    width: min(49vw, #{rem(697)});
+    height: auto;
+    border-radius: var(--border-radius-8);
+
+    @include tablet {
+      width: max(68vw, #{rem(450)});
+    }
+  }
+}
