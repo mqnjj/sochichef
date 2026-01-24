@@ -1,0 +1,50 @@
+#cardlist-toggle {
+  display: none;
+}
+
+.cardlist {
+  @include flex(flex, start, start);
+
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--color-light);
+  padding: rem(8) rem(16);
+  transition: var(--transition-duration);
+  border-radius: var(--border-radius-8) var(--border-radius-8) 0 0;
+
+  &__label {
+    @include flex(flex, space-between, center);
+    width: 100%;
+
+    &--opened {
+      & ~ .cardlist__wrap {
+        height: auto;
+        padding-block: rem(8);
+      }
+      .cardlist__label-arrow {
+        rotate: (180deg);
+      }
+    }
+  }
+
+  &__wrap {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    overflow-y: scroll;
+    height: 0;
+    max-height: rem(300);
+    width: 100%;
+    transition: var(--transition-duration);
+    z-index: 50;
+    background-color: var(--color-light);
+    border-radius: 0 0 var(--border-radius-8) var(--border-radius-8);
+    padding-inline: rem(16);
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-blue-alternate);
+      border-radius: var(--border-radius-8);
+    }
+  }
+}

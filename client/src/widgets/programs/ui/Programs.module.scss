@@ -1,0 +1,168 @@
+.programs {
+  @include flex(flex, center, center);
+  flex-direction: column;
+  row-gap: rem(64);
+  padding-block: var(--section-padding-y);
+
+  @include tablet {
+    row-gap: rem(32);
+  }
+
+  &__card {
+    &-list {
+      @include flex;
+      flex-direction: column;
+      row-gap: rem(24);
+    }
+
+    &-item {
+      @include flex(flex, start, center);
+      position: relative;
+      padding: rem(40);
+      width: 100%;
+      background-color: var(--color-grey-alternate);
+
+      @include tablet {
+        @include flex(flex, center, start);
+        flex-direction: column;
+        row-gap: rem(20);
+        padding: rem(20);
+      }
+
+      &__main {
+        @include flex(flex, center, start);
+        flex-direction: column;
+        row-gap: rem(24);
+
+        @include tablet {
+          width: 100%;
+        }
+
+        @include mobile {
+          align-items: center;
+        }
+
+        &-title {
+          font-size: clamp(1.575rem, 3.94vw, 3.5rem);
+          font-weight: 300;
+
+          &--span {
+            @include tablet-above {
+              display: block;
+            }
+          }
+        }
+
+        &-tags {
+          @include flex(flex, start, center);
+          column-gap: rem(16);
+          width: 100%;
+          row-gap: rem(5);
+
+          @include mobile-s {
+            @include flex;
+            flex-direction: column;
+          }
+        }
+
+        &-description {
+          @include flex(flex, center, start);
+          flex-direction: column;
+          row-gap: rem(8);
+          max-width: 70%;
+
+          &__title {
+            font-size: var(--font-size-22);
+            font-weight: 500;
+          }
+
+          &__main {
+            &-list {
+              @include flex(flex, center, start);
+              flex-direction: column;
+              row-gap: rem(8);
+              padding-right: rem(20);
+
+              @include tablet {
+                padding-right: 0;
+              }
+            }
+
+            &-item {
+              list-style: disc inside;
+
+              @include laptop {
+                font-size: var(--font-size-16);
+              }
+
+              @include desktop {
+                font-size: var(--font-size-14);
+              }
+            }
+          }
+        }
+      }
+
+      &__description {
+        @include flex;
+        aspect-ratio: 1;
+        width: 45%;
+        max-height: rem(300);
+
+        @include tablet {
+          position: relative;
+          width: 100%;
+        }
+
+        &-image {
+          position: absolute;
+          height: 100%;
+          width: auto;
+          bottom: 0;
+          right: 12%;
+
+          @include laptop {
+            height: 90%;
+          }
+
+          @include tablet {
+            height: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: rem(-20);
+          }
+        }
+
+        &-text {
+          position: absolute;
+          background-color: var(--color-light);
+          padding: rem(16);
+          width: 49%;
+          right: rem(40);
+          bottom: rem(20);
+          text-align: center;
+          border-radius: var(--border-radius-8);
+          opacity: 0.9;
+
+          @include laptop {
+            font-size: var(--font-size-16);
+          }
+
+          @include tablet {
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+
+          @include mobile {
+            font-size: var(--font-size-14);
+          }
+
+          @include mobile-s {
+            font-size: rem(12);
+          }
+        }
+      }
+    }
+  }
+}
