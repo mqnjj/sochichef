@@ -1,0 +1,28 @@
+.ticker {
+  padding-block: var(--section-padding-y);
+  width: 100%;
+  overflow: hidden;
+
+  &__content {
+    @include flex;
+
+    padding-block: rem(10);
+    background-color: var(--color-grey-alternate);
+
+    &-text {
+      font-weight: 500;
+      color: var(--color-blue-alternate);
+      margin-right: rem(100);
+
+      @include tablet {
+        font-size: var(--font-size-16);
+        margin-right: rem(70);
+      }
+
+      @include mobile {
+        font-size: var(--font-size-14);
+        margin-right: rem(40);
+      }
+    }
+  }
+}

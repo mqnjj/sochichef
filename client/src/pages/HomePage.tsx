@@ -1,4 +1,4 @@
-import { Banner, Description, Programs } from '@/widgets';
+import { Banner, Description, Programs, Ticker } from '@/widgets';
 
 const HomePage = () => {
   return (
@@ -6,6 +6,7 @@ const HomePage = () => {
       <Banner />
       <Description />
       <Programs />
+      <Ticker />
     </>
   );
 };
