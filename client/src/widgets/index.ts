@@ -4,3 +4,4 @@ export * from './footer';
 export * from './description';
 export * from './programs';
 export * from './ticker';
+export * from './teachers';

@@ -3,7 +3,7 @@ import React from 'react';
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 import style from './CardList.module.scss';
-import ArrowUpForPrograms from '../../assets/arrow-up.svg';
+import { ArrowUpIcon } from '../../assets';
 import Image from 'next/image';
 import clsx from 'clsx';
 
@@ -28,7 +28,7 @@ const CardList: React.FC<CardListProps> = ({ title, children }) => {
         {title}
         <Image
           className={style['cardlist__label-arrow']}
-          src={ArrowUpForPrograms}
+          src={ArrowUpIcon}
           alt=''
           width='24'
           height='24'

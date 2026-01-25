@@ -1,0 +1,21 @@
+.teachers {
+  @include flex(flex, center, center);
+  flex-direction: column;
+  row-gap: rem(64);
+  padding-block: var(--section-padding-y);
+
+  @include tablet {
+    row-gap: rem(32);
+  }
+
+  &__images {
+    &-list {
+      @include flex;
+
+      @include tablet {
+        @include flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
