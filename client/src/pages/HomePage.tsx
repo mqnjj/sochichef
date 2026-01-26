@@ -1,4 +1,4 @@
-import { Banner, Description, For, Programs, Teachers, Ticker, WorkShops } from '@/widgets';
+import { Banner, Description, For, Programs, Teachers, Ticker, WhyUs, WorkShops } from '@/widgets';
 
 const HomePage = () => {
   return (
@@ -10,6 +10,7 @@ const HomePage = () => {
       <Teachers />
       <For />
       <WorkShops />
+      <WhyUs />
     </>
   );
 };
