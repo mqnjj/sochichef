@@ -1,0 +1,40 @@
+.forcard {
+  @include flex(flex, center, start);
+  flex-direction: column;
+  row-gap: rem(8);
+  background-color: var(--color-grey-alternate);
+  padding: rem(16);
+  width: 100%;
+  border-radius: var(--border-radius-8);
+
+  @include laptop {
+    padding: rem(12);
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: rem(22);
+
+    @include laptop {
+      font-size: rem(20);
+    }
+
+    @include tablet {
+      font-size: rem(18);
+    }
+  }
+
+  &__children {
+    @include flex(flex, center, start);
+    flex-direction: column;
+    row-gap: rem(8);
+
+    @include laptop {
+      font-size: rem(16);
+    }
+
+    @include tablet {
+      font-size: rem(14);
+    }
+  }
+}
