@@ -1,0 +1,27 @@
+.graduates {
+  @include flex;
+  flex-direction: column;
+  row-gap: rem(64);
+  padding-block: var(--section-padding-y);
+
+  @include tablet {
+    row-gap: rem(32);
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__cards {
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(24);
+
+      @include laptop {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}

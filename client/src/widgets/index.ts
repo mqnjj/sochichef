@@ -8,3 +8,4 @@ export * from './teachers';
 export * from './for';
 export * from './work-shops';
 export * from './why-us';
+export * from './graduates';

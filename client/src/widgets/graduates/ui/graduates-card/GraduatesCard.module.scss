@@ -1,0 +1,71 @@
+.graduatescard {
+  position: relative;
+  padding: rem(24);
+  background-color: var(--color-grey-alternate);
+  min-height: rem(450);
+  max-width: rem(700);
+  height: 100%;
+
+  @include mobile {
+    min-height: auto;
+  }
+
+  &__main {
+    @include flex(flex, space-between, flex-start);
+    position: relative;
+    flex-direction: column;
+    z-index: 1;
+    height: 100%;
+    row-gap: rem(16);
+
+    &__info {
+      @include flex(flex, start, start);
+      flex-direction: column;
+      row-gap: rem(16);
+
+      &-title {
+        font-size: rem(56);
+        font-weight: 300;
+
+        @include mobile {
+          font-size: clamp(#{rem(34)}, 7.3vw, #{rem(56)});
+        }
+      }
+
+      &-place {
+        font-size: rem(22);
+        font-weight: 500;
+        max-width: rem(400);
+      }
+    }
+
+    &-description {
+      padding: rem(16);
+      background-color: var(--color-light);
+      border-radius: var(--border-radius-8);
+      opacity: 0.9;
+
+      @include mobile {
+        font-size: rem(14);
+      }
+
+      @include mobile-s {
+        margin-top: rem(200);
+        font-size: clamp(#{rem(12)}, 2.9vw, #{rem(14)});
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    height: rem(360);
+    width: auto;
+
+    @include mobile-s {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
