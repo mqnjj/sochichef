@@ -33,8 +33,8 @@ export const For = () => {
               className={style['for__main-graduates__content-image']}
               src={GraduatesImage}
               alt='Повара смотрят в волшебную кастрюлю'
-              width={698}
-              height={531}
+              width={6980}
+              height={5310}
               loading='lazy'
             />
           </div>
@@ -44,8 +44,8 @@ export const For = () => {
             className={style['for__main-cooks__image']}
             src={CooksImage}
             alt='Повара и кондитеры колледжа'
-            width={698}
-            height={416}
+            width={6980}
+            height={4160}
             loading='lazy'
           />
           <div className={style['for__main-cooks__content']}>

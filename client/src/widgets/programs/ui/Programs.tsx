@@ -60,8 +60,8 @@ export const Programs = () => {
                 className={style['programs__card-item__description-image']}
                 src={Image1}
                 alt=' '
-                width={240}
-                height={410}
+                width={2400}
+                height={4100}
                 loading='lazy'
               />
               <span className={style['programs__card-item__description-text']}>
@@ -111,8 +111,8 @@ export const Programs = () => {
                 className={style['programs__card-item__description-image']}
                 src={Image2}
                 alt=' '
-                width={240}
-                height={410}
+                width={2400}
+                height={4100}
                 loading='lazy'
               />
               <span className={style['programs__card-item__description-text']}>
@@ -183,8 +183,8 @@ export const Programs = () => {
                 className={style['programs__card-item__description-image']}
                 src={Image3}
                 alt=' '
-                width={240}
-                height={410}
+                width={2400}
+                height={4100}
                 loading='lazy'
               />
               <span className={style['programs__card-item__description-text']}>
@@ -236,8 +236,8 @@ export const Programs = () => {
                 className={style['programs__card-item__description-image']}
                 src={Image4}
                 alt=' '
-                width={240}
-                height={410}
+                width={2400}
+                height={4100}
                 loading='lazy'
               />
               <span className={style['programs__card-item__description-text']}>
