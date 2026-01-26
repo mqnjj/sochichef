@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import style from './Banner.module.scss';
-import BannerImage from '../assets/banner.jpg';
+import { BannerImage } from '../assets/img';
 import { Button } from '@/shared/ui';
 
 export const Banner = () => {
