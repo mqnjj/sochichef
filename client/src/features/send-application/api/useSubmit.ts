@@ -41,9 +41,6 @@ const useSubmit = () => {
         body: JSON.stringify(data),
       });
 
-      console.log(url);
-      console.log('Response:', response);
-
       if (!response.ok) {
         setStatus('error');
       } else {
