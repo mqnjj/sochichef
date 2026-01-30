@@ -24,10 +24,9 @@ app.use('/api', mailRouter);
 app.listen(PORT, async () => {
   try {
     console.log(`Server has been started on port ${PORT}`);
-    transporter.verify((error: Error | null) => {
-      console.log(error ? `Error with transporter: ${error?.message}` : 'Server is ready to send emails');
-    });
-  } catch (err) {
-    console.error('Error: ', err);
+    await transporter.verify();
+    console.log('Server is ready to send emails');
+  } catch (error) {
+    console.error('Error: ', error instanceof Error ? error.message : error);
   }
 });
